@@ -1,0 +1,45 @@
+<div class="table-container">
+  <table class="table">
+    <thead class="header">
+      <tr>
+        <th class="flex_center btn_group">
+          <button
+            [ngClass]="enableBtnView ? 'btn_edit' : 'btn_disabled'"
+            [disabled]="!enableBtnView"
+            (click)="enableBtnView ? showExpenseByIdFromList() : null"
+          >
+            <i class="fas fa-edit"></i>
+          </button>
+
+          <button
+            [ngClass]="enableBtnDelete ? 'btn_delete' : 'btn_disabled'"
+            [disabled]="!enableBtnDelete"
+            (click)="enableBtnDelete ? deleteExpensesByIds() : null"
+          >
+            <i class="fas fa-trash"></i>
+          </button>
+        </th>
+        <th class="items_group" *ngFor="let header of tableHeaders">
+          {{ header }}
+        </th>
+      </tr>
+    </thead>
+    <tbody class="body">
+      <tr *ngFor="let expense of expensesData">
+        <td class="checkbox">
+          <input
+            type="checkbox"
+            [id]="'id' + expense.id"
+            [name]="'name' + expense.id"
+            [disabled]="enableCheckboxs ? false : true"
+            (click)="selectExpensesByIds(expense.id)"
+          />
+        </td>
+        <td>{{ expense.amount }}</td>
+        <td>{{ expense.category | titlecase }}</td>
+        <td>{{ expense.concept | titlecase }}</td>
+        <td>{{ expense.date | date: "dd/MM/yyyy" }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

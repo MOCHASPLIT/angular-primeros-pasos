@@ -1,1 +1,224 @@
 /* You can add global styles to this file, and also import other style files */
+/* :root {
+  color-scheme: light dark;
+} */
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  background: #c4d3f6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+}
+
+p {
+  margin-bottom: 15px;
+}
+
+.flex_center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wform {
+  width: 35%;
+  align-self: flex-start;
+}
+
+.wtable {
+  width: 65%;
+}
+
+.g_form_table {
+  gap: 8px;
+}
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.header {
+  background: #6c7ae0;
+  color: white;
+}
+
+.header tr .btn_group {
+  padding: 16px 4px;
+  flex-direction: row;
+  gap: 8px;
+}
+
+.header tr .btn_group button {
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  height: 25px;
+  width: 25px;
+  color: #ffffff;
+}
+
+.header tr .btn_group .btn_delete {
+  color: red;
+}
+
+.header tr .btn_group .btn_delete:hover {
+  color: #ffffff;
+  background: red;
+}
+
+.header tr .btn_group .btn_edit {
+  color: blue;
+}
+
+.header tr .btn_group .btn_edit:hover {
+  color: #ffffff;
+  background: blue;
+}
+
+.header tr .btn_group .btn_disabled {
+  color: gray;
+  cursor: default;
+}
+
+.header tr .items_group {
+  padding: 16px 4px;
+  text-align: left;
+}
+
+.body .checkbox {
+  text-align: center;
+}
+
+.body tr:not(:last-child) {
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.body tr:hover {
+  background: #ececff;
+}
+
+.body td {
+  padding: 15px 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100px;
+}
+
+.form_container {
+  flex-direction: column;
+  background: #ffffff;
+  width: 100%;
+  border-radius: 8px;
+}
+
+.form_container h4 {
+  padding: 16px 0;
+  color: #ffffff;
+  margin: 0;
+  width: 100%;
+  background: #6c7ae0;
+  text-align: center;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.form_container .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 4px;
+  gap: 8px;
+}
+
+.form_container .row label {
+  width: 40%;
+}
+
+.form_container .row input {
+  font-family: inherit;
+  line-height: inherit;
+  font-size: 14px;
+  width: 60%;
+  height: 16px;
+  border: none;
+  outline: none;
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 4px;
+}
+
+.form_container .row select {
+  font-family: inherit;
+  line-height: inherit;
+  font-size: 14px;
+  width: 60%;
+  border: none;
+  outline: none;
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 1px;
+}
+
+.form_container .row_btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 4px;
+}
+
+.form_container .row_btn button {
+  width: 40%;
+  border: none;
+  outline: none;
+  padding: 4px;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  border-radius: 3rem;
+  cursor: pointer;
+}
+
+.form_container .row_btn .secondary {
+  background: #ececff;
+  color: black;
+}
+
+.form_container .row_btn .primary {
+  background: #6c7ae0;
+  color: #ffffff;
+}
+
+.form_container .row_btn .slide-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.form_container .row_btn .slide-btn:hover {
+  transform: scale(1.05);
+}
+
+@media only screen and (max-width: 991px) {
+  .flex_center {
+    flex-direction: column;
+  }
+  .wform {
+    width: 100%;
+  }
+  .wtable {
+    width: 100%;
+  }
+}

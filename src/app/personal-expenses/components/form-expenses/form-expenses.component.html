@@ -1,0 +1,70 @@
+<div *ngIf="selectedExpense" class="flex_center form_container">
+  <h4>EDIT FORM</h4>
+  <form class="form">
+    <div class="row">
+      <label for="amount">Amount : </label>
+      <input type="number" name="amount" [(ngModel)]="selectedExpense.amount" />
+    </div>
+    <div class="row">
+      <label for="category">Category : </label>
+      <input
+        type="text"
+        name="category"
+        [(ngModel)]="selectedExpense.category"
+      />
+    </div>
+    <div class="row">
+      <label for="concept">Concept : </label>
+      <input type="text" name="concept" [(ngModel)]="selectedExpense.concept" />
+    </div>
+    <div class="row">
+      <label for="date">Date : </label>
+      <input type="date" name="date" [(ngModel)]="selectedExpense.date" />
+    </div>
+    <div class="row_btn">
+      <button type="button" class="secondary slide-btn" (click)="cancelEdit()">
+        Cancel
+      </button>
+      <button
+        type="button"
+        class="primary slide-btn"
+        (click)="updateExpense(selectedExpense)"
+      >
+        Update
+      </button>
+    </div>
+  </form>
+</div>
+
+<div *ngIf="!selectedExpense" class="flex_center form_container">
+  <h4>SAVE FORM</h4>
+  <form (ngSubmit)="addNewExpense()">
+    <div class="row">
+      <label for="amount">Amount : </label>
+      <input type="number" name="amount" [(ngModel)]="expense.amount" />
+    </div>
+    <div class="row">
+      <label for="category">Category : </label>
+      <select name="category" [(ngModel)]="expense.category">
+        <option value="" selected disabled>Select an option</option>
+        <option *ngFor="let category of categories" [value]="category">
+          {{ category | titlecase }}
+        </option>
+      </select>
+    </div>
+    <div class="row">
+      <label for="concept">Concept : </label>
+      <input type="text" name="concept" [(ngModel)]="expense.concept" />
+    </div>
+    <div class="row">
+      <label for="date">Date : </label>
+      <input type="date" name="date" [(ngModel)]="expense.date" />
+    </div>
+    <div class="row_btn">
+      <button type="button" class="secondary slide-btn" (click)="resetForm()">
+        Reset
+      </button>
+      <button type="submit" class="primary slide-btn">Save</button>
+    </div>
+  </form>
+</div>
